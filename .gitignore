@@ -1,0 +1,12 @@
+.*
+!.gitignore
+!.env
+!.vscode/
+
+# Ignore Python bytecode cache folders
+__pycache__
+
+# Ignore Robot Framework output files (log, report, output)
+log.html
+output.xml
+report.html
