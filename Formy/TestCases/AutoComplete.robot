@@ -2,7 +2,7 @@
 Documentation    This is Autocomplete TC
 Library    SeleniumLibrary
 Library    Collections
-Library    ../CustomKeywords/keyboard_helper.py
+Library    ../CustomKeywords/Formy.py
 Resource    ../resources/resource.robot
 Test Setup    open browser and goto formy website
 Test Teardown    Close Browser
