@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.1 (Python 3.13.5 on win32)" generated="2025-06-20T10:37:06.070431" rpa="false" schemaversion="5">
+<suite id="s1" name="AutoComplete" source="C:\WasimShaikh\Programming\Projects\RobotFramework\Formy\Test Case\AutoComplete.robot">
+<test id="s1-t1" name="AutoComplete Suite" line="9">
+<kw name="open browser and goto formy website" owner="resource" type="SETUP">
+<kw name="Create Webdriver" owner="SeleniumLibrary">
+<msg time="2025-06-20T10:37:06.405890" level="INFO">Creating an instance of the Edge WebDriver.</msg>
+<arg>Edge</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="PASS" start="2025-06-20T10:37:06.405731" elapsed="1.777074"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-06-20T10:37:08.183257" level="INFO">Opening url 'https://formy-project.herokuapp.com/'</msg>
+<arg>https://formy-project.herokuapp.com/</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-06-20T10:37:08.183076" elapsed="2.632532"/>
+</kw>
+<status status="PASS" start="2025-06-20T10:37:06.405033" elapsed="4.410790"/>
+</kw>
+<kw name="click on autocomplete component">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-20T10:37:12.818095" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-20T10:37:10.817343" elapsed="2.001112"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-06-20T10:37:12.820033" level="INFO">Clicking element 'xpath://li/a[text()="Autocomplete"]'.</msg>
+<arg>xpath://li/a[text()="Autocomplete"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-20T10:37:12.819015" elapsed="0.171865"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-20T10:37:14.992647" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-20T10:37:12.991351" elapsed="2.001697"/>
+</kw>
+<status status="PASS" start="2025-06-20T10:37:10.816831" elapsed="4.176689"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-06-20T10:37:14.995798" elapsed="2.282457"/>
+</kw>
+<status status="PASS" start="2025-06-20T10:37:06.404293" elapsed="10.874597"/>
+</test>
+<doc>This is Autocomplete TC</doc>
+<status status="PASS" start="2025-06-20T10:37:06.072636" elapsed="11.209148"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="AutoComplete" id="s1" pass="1" fail="0" skip="0">AutoComplete</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
