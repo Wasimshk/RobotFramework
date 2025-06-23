@@ -11,20 +11,16 @@ Test Setup    open browser and goto formy website
 ${buttonsCommonLoc}    //*[contains(@class, "btn btn-lg")]
 @{ButtonsList}    	Primary    Success    Info    Warning    Danger    Link    Left    Middle    Right    1    2    Dropdown
 @{ButtonofChoice}    Primary    Info    Middle
+
 *** Test Cases ***
 Buttons Component Validations
-    open the buttons component page
+    Click on the Component and Validate the Component Page is Opened    css:div>li>a[href="/buttons"]    css:.form-group.row
     validate if all the buttons are clickable and click    ${buttonsCommonLoc}
     check if the correct buttons are present
     Press Buttons Of Choice    ${buttonsCommonLoc}    ${ButtonofChoice}
     open and select from the drop down    link 1
 
 *** Keywords ***
-open the buttons component page
-#    Click Element    xpath://div/li/a[@href="/buttons"]
-    Click Element    css:div>li>a[href="/buttons"]
-    Wait Until Element Is Visible    css:.form-group.row
-
 validate if all the buttons are clickable and click
     [Arguments]    ${locator}
     @{ButtonNamesList}=    Create List

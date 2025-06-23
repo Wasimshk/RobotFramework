@@ -10,3 +10,6 @@ __pycache__
 log.html
 output.xml
 report.html
+
+# Ignore pabot results
+Formy/TestCases/pabot_results/

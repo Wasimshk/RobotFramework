@@ -20,8 +20,7 @@ AutoComplete Suite
 
 *** Keywords ***
 click on autocomplete component and validate the autocomplete page is opened
-    Click Element    xpath://li/a[text()="Autocomplete"]
-    Wait Until Element Is Visible    css:.pac-target-input
+    Click on the Component and Validate the Component Page is Opened    xpath://li/a[text()="Autocomplete"]    css:.pac-target-input
 
 update the autocomplete form and click home button
 # instead of adding the address one by one we run for loop and add the elements
@@ -31,9 +30,7 @@ update the autocomplete form and click home button
         Input Text    xpath:(//*[@placeholder])[${index}]        ${address}
         ${index}=    Evaluate    ${index}+1
     END
-
-    Click Element    css:.navbar-brand
-    Wait Until Element Is Visible    ${homePageLoc}
+    Get back to home page
     Validate the home page
 
 

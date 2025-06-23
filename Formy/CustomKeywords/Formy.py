@@ -4,6 +4,8 @@ from time import sleep
 import pyautogui
 from robot.api.deco import library, keyword
 from robot.libraries.BuiltIn import BuiltIn
+from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.common.keys import Keys
 
 @library
 class Formy:
@@ -27,3 +29,20 @@ class Formy:
                 self.selLib.click_button('xpath:(' + locator + ')['+str(i)+']')
                 print(button.text + " button is Clicked!")
             i = i + 1
+
+    @keyword
+    def drag_and_drop_action(self, source_xpath, target_xpath):
+        driver = self.selLib.driver
+        source = driver.find_element("xpath", source_xpath)
+        target = driver.find_element("xpath", target_xpath)
+        ActionChains(driver).drag_and_drop(source, target).perform()
+
+    @keyword
+    def ctrl_click(self, xpath):
+        driver = self.selLib.driver
+        link = driver.find_element("xpath", xpath)
+        ActionChains(driver) \
+            .key_down(Keys.CONTROL) \
+            .click(link) \
+            .key_up(Keys.CONTROL) \
+            .perform()
