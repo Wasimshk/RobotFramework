@@ -1,13 +1,14 @@
 *** Settings ***
-Documentation    play around with all different components
+Documentation    DropDown Page
 Library     SeleniumLibrary
-Resource    ../resources/resource.robot
+Resource    ../resources/generic.robot
+Resource    ../resources/home_page.robot
 Library    ../CustomKeywords/Formy.py
-Test Teardown    Close Browser
-Test Setup    open browser and goto formy website
+Resource    CheckBox.robot
 
 *** Variables ***
-${DropDownOption}       Checkbox
+${dropDownPageHeader}    //h1[text()="Dropdown"]
+${DropDownOption}       Checkboxes
 @{DropDownList}
 ...    Autocomplete
 ...    Buttons
@@ -25,24 +26,21 @@ ${DropDownOption}       Checkbox
 ...    Switch Window
 ...    Complete Web Form
 
-*** Test Cases ***
-Verify DropDown
-    Validate All options    ${DropDownList}
-    Validate single option    ${DropDownOption}
-
 *** Keywords ***
-Validate single option
+Validate DropDown Single Option
     [Arguments]    ${DropDownOption}
-    Click on the Component and Validate the Component Page is Opened    ${CompLocInitial}Dropdown")]    dropdownMenuButton
+    Click on the Component    dropdown
+    Validate the Component Page is Visible    xpath:${dropDownPageHeader}
     Sleep    0.5
     Click Button    css:.dropdown button
-    Click on the Component and Validate the Component Page is Opened    xpath://div/div/a[contains(text(),"${DropDownOption}")]    xpath://h1[contains(text(),"${DropDownOption}")]
+    Click Element    xpath://div/div/a[contains(@href,"checkbox")]
+    Validate the Component Page is Visible    xpath:${checkboxPageHeader}
     Get back to home page
-    Sleep    1
 
-Validate All options
+Validate All DropDown Options
     [Arguments]    ${DropDownList}
-    Click on the Component and Validate the Component Page is Opened    ${CompLocInitial}Dropdown")]    dropdownMenuButton
+    Click on the Component    dropdown
+    Validate the Component Page is Visible    xpath:${dropDownPageHeader}
 
     FOR    ${item}    IN    @{DropDownList}
         Click Button    css:.dropdown button

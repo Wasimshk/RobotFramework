@@ -1,14 +1,17 @@
 *** Settings ***
-Documentation    play around with all different components
+Documentation    Drag and Drop Page
 Library     SeleniumLibrary
-Resource    ../resources/resource.robot
+Resource    ../resources/generic.robot
+Resource    ../resources/home_page.robot
 Library    ../CustomKeywords/Formy.py
-Test Teardown    Close Browser
-Test Setup    open browser and goto formy website
 
-*** Test Cases ***
+*** Variables ***
+${dragDropPageHeader}    //h1[text()="Drag the image into the box"]
+
+*** Keywords ***
 Validate Drag And Drop
-    Click on the Component and Validate the Component Page is Opened    ${CompLocInitial}Drag")]    xpath://h1[contains(text(),"Drag")]
+    Click on the Component    dragdrop
+    Validate the Component Page is Visible    xpath:${dragDropPageHeader}
 #    python custom keyword
     Drag And Drop Action    //img[contains(@src,"selenium-logo")]    //div/p[contains(text(),"Drop here")]
 #    inbuilt selenium keyword

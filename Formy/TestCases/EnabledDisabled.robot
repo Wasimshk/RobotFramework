@@ -1,22 +1,19 @@
 *** Settings ***
-Documentation    play around with all different components
+Documentation    EnabledDisabled Page
 Library     SeleniumLibrary
-Resource    ../resources/resource.robot
+Resource    ../resources/generic.robot
+Resource    ../resources/home_page.robot
 Library    ../CustomKeywords/Formy.py
-Test Teardown    Close Browser
-Test Setup    open browser and goto formy website
 
 *** Variables ***
+${enabledDisabledPageHeader}    //h1[text()="Enabled and Disabled elements"]
 @{enableDisableElem}    [placeholder="Input here..."]    [placeholder="Disabled input here..."]
-
-*** Test Cases ***
-Enable Diable
-    Validate Enabled And Disabled Elements    ${enableDisableElem}
 
 *** Keywords ***
 Validate Enabled And Disabled Elements
     [Arguments]    ${elements}
-    Click on the Component and Validate the Component Page is Opened    ${CompLocInitial}Enabled")]    xpath://h1[contains(text(),"Enabled")]
+    Click on the Component    enabled
+    Validate the Component Page is Visible    xpath:${enabledDisabledPageHeader}
     FOR    ${element}    IN    @{elements}
         Element Should Be Visible    css:${element}
         IF    '${element}'=='[placeholder="Input here..."]'

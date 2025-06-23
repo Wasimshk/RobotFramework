@@ -1,22 +1,19 @@
 *** Settings ***
-Documentation    play around with checkbox
+Documentation    Checkboxes Page
 Library     SeleniumLibrary
-Resource    ../resources/resource.robot
-Test Teardown    Close Browser
-Test Setup    open browser and goto formy website
+Resource    ../resources/generic.robot
+Resource    ../resources/home_page.robot
+Library    ../CustomKeywords/Formy.py
 
 *** Variables ***
+${checkboxPageHeader}    //h1[text()="Checkboxes"]
 @{checkBoxList}    id:checkbox-1    id:checkbox-2    id:checkbox-3
 
-*** Test Cases ***
-Checkbox Verification
-    Select UnSelect    ${checkBoxList}
-    Skip Checkbox    ${checkBoxList}
-
 *** Keywords ***
-Select UnSelect
+Validate Select UnSelect
     [Arguments]    ${checkboxlist}
-    Click on the Component and Validate the Component Page is Opened    ${CompLocInitial}Checkbox")]    id:checkbox-1
+    Click on the Component    checkbox
+    Validate the Component Page is Visible    xpath:${checkboxPageHeader}
     FOR    ${locator}    IN    @{checkboxlist}
         Select Checkbox     ${locator}
         Checkbox Should Be Selected    ${locator}
@@ -25,12 +22,14 @@ Select UnSelect
     END
     Get back to home page
 
-Skip Checkbox
+Validate Skip Checkbox
     [Arguments]    ${checkboxlist}
-    Click on the Component and Validate the Component Page is Opened    ${CompLocInitial}Checkbox")]    id:checkbox-1
+    Click on the Component    checkbox
+    Validate the Component Page is Visible    xpath:${checkboxPageHeader}
     FOR    ${locator}    IN    @{checkboxlist}
         Continue For Loop If    '${locator}'=='id:checkbox-2'
         Select Checkbox     ${locator}
+        Sleep    0.5
         Checkbox Should Be Selected    ${locator}
     END
     Get back to home page

@@ -1,16 +1,15 @@
 *** Settings ***
-Documentation    This is Autocomplete TC
-Library    SeleniumLibrary
-Library    Collections
+Documentation    Buttons Page
+Library     SeleniumLibrary
+Resource    ../resources/generic.robot
+Resource    ../resources/home_page.robot
 Library    ../CustomKeywords/Formy.py
-Resource    ../resources/resource.robot
-Test Setup    open browser and goto formy website
-Test Teardown    Close Browser
 
 *** Variables ***
+${autoCompletePageHeader}    //h1[text()="Autocomplete"]
 @{addressList}=        my address    Lane 111    ST 222    Pune    Maharashtra    411001    India
 
-*** Test Cases ***
+*** Keywords ***
 AutoComplete Suite
     click on autocomplete component and validate the autocomplete page is opened
     update the autocomplete form and click home button
@@ -18,9 +17,9 @@ AutoComplete Suite
     partially add the details and Select the option to autocomplete
     validate if the autocomplete populate the correct details
 
-*** Keywords ***
 click on autocomplete component and validate the autocomplete page is opened
-    Click on the Component and Validate the Component Page is Opened    xpath://li/a[text()="Autocomplete"]    css:.pac-target-input
+    Click on the Component    autocomplete
+    Validate the Component Page is Visible    xpath:${autoCompletePageHeader}
 
 update the autocomplete form and click home button
 # instead of adding the address one by one we run for loop and add the elements

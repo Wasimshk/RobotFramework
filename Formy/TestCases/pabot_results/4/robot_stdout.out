@@ -1,81 +1,9 @@
 ==============================================================================
-TestCases                                                                     
+CompleteSuite :: Complete Formy Test suite                                    
 ==============================================================================
-TestCases.CompleteWebForm                                                     
-==============================================================================
-Test the complete Web Form                                              
-  Traceback (most recent call last):
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    File  C:\WasimShaikh\Projects\RobotFramework\Formy\TestCases\CompleteWebForm.robot:2
-    T:  Test the complete Web Form    
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    File  C:\WasimShaikh\Projects\RobotFramework\Formy\TestCases\CompleteWebForm.robot:3
-      Enter first and last name    
-______________________________________________________________________________
-  
-  Traceback (most recent call last):
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    File  C:\WasimShaikh\Projects\RobotFramework\Formy\TestCases\CompleteWebForm.robot:2
-    T:  Test the complete Web Form    
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    File  C:\WasimShaikh\Projects\RobotFramework\Formy\TestCases\CompleteWebForm.robot:4
-      add job title    
-______________________________________________________________________________
-  
-  Traceback (most recent call last):
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    File  C:\WasimShaikh\Projects\RobotFramework\Formy\TestCases\CompleteWebForm.robot:2
-    T:  Test the complete Web Form    
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    File  C:\WasimShaikh\Projects\RobotFramework\Formy\TestCases\CompleteWebForm.robot:5
-      Select highest education    
-______________________________________________________________________________
-  
-  Traceback (most recent call last):
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    File  C:\WasimShaikh\Projects\RobotFramework\Formy\TestCases\CompleteWebForm.robot:2
-    T:  Test the complete Web Form    
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    File  C:\WasimShaikh\Projects\RobotFramework\Formy\TestCases\CompleteWebForm.robot:6
-      Select Sex    
-______________________________________________________________________________
-  
-  Traceback (most recent call last):
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    File  C:\WasimShaikh\Projects\RobotFramework\Formy\TestCases\CompleteWebForm.robot:2
-    T:  Test the complete Web Form    
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    File  C:\WasimShaikh\Projects\RobotFramework\Formy\TestCases\CompleteWebForm.robot:7
-      Select year of experience    
-______________________________________________________________________________
-  
-  Traceback (most recent call last):
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    File  C:\WasimShaikh\Projects\RobotFramework\Formy\TestCases\CompleteWebForm.robot:2
-    T:  Test the complete Web Form    
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    File  C:\WasimShaikh\Projects\RobotFramework\Formy\TestCases\CompleteWebForm.robot:8
-      pick the date    
-______________________________________________________________________________
-| FAIL |
-Several failures occurred:
-
-1) User keyword cannot be empty.
-
-2) User keyword cannot be empty.
-
-3) User keyword cannot be empty.
-
-4) User keyword cannot be empty.
-
-5) User keyword cannot be empty.
-
-6) User keyword cannot be empty.
+File Upload Component                                                 | PASS |
 ------------------------------------------------------------------------------
-TestCases.CompleteWebForm                                             | FAIL |
-1 test, 0 passed, 1 failed
-==============================================================================
-TestCases                                                             | FAIL |
-1 test, 0 passed, 1 failed
+CompleteSuite :: Complete Formy Test suite                            | PASS |
+1 test, 1 passed, 0 failed
 ==============================================================================
 Output:  C:\WasimShaikh\Projects\RobotFramework\Formy\TestCases\pabot_results\4\output.xml

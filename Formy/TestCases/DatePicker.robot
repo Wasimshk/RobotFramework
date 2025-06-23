@@ -1,13 +1,14 @@
 *** Settings ***
-Documentation    play around with datepicker
+Documentation    Date Picker Page
 Library     SeleniumLibrary
 Library    Collections
 Library    String
-Resource    ../resources/resource.robot
-Test Teardown    Close Browser
-Test Setup    open browser and goto formy website
+Resource    ../resources/generic.robot
+Resource    ../resources/home_page.robot
+Library    ../CustomKeywords/Formy.py
 
 *** Variables ***
+${datePickerPageHeader}    //h1[text()="Datepicker"]
 #date in mm/dd/yyyy
 ${DatePickerLoc}    css:[placeholder="mm/dd/yyyy"]
 @{BirthDateDiffFormat}    02/11/1996    02\11\1996    02|11|1996    02_11_1996    02 11 1996    02,11,1996    02.11.1996    02*11*1996    02+11+1996    02-11-1996
@@ -15,26 +16,20 @@ ${myBirthDate}    02/11/1996
 ${incorrectFormat}    25/25/2025
 ${Myfuturebirthday}    02/11/2027
 
-
-*** Test Cases ***
-Validate Date Picker
-    Direct input Valid Format    ${myBirthDate}
-    Direct Input Invalid Format    ${incorrectFormat}
-    Direct input different formats    ${BirthDateDiffFormat}
-    pick from calender    ${Myfuturebirthday}
-
 *** Keywords ***
-Direct input Valid Format
+Validate Direct input Valid Format
     [Arguments]    ${date}
-    Click on the Component and Validate the Component Page is Opened    ${CompLocInitial}Datepicker")]    xpath://h1[text()="Datepicker"]
+    Click on the Component    datepicker
+    Validate the Component Page is Visible    xpath:${datePickerPageHeader}
     Sleep    0.5
     Input Text    ${DatePickerLoc}     ${date}
     Validate if the correct date is added    ${date}
     Get back to home page
 
-Direct Input Invalid Format
+Validate Direct Input Invalid Format
     [Arguments]    ${date}
-    Click on the Component and Validate the Component Page is Opened    ${CompLocInitial}Datepicker")]    xpath://h1[text()="Datepicker"]
+    Click on the Component    datepicker
+    Validate the Component Page is Visible    xpath:${datePickerPageHeader}
     Wait Until Element Is Visible        ${DatePickerLoc}
     Sleep    0.5
     Input Text    ${DatePickerLoc}     ${date}
@@ -43,9 +38,10 @@ Direct Input Invalid Format
     Validate if the correct date is added    ${date}
     Get back to home page
 
-Direct input different formats
+Validate Direct input different formats
     [Arguments]    ${dateList}
-    Click on the Component and Validate the Component Page is Opened    ${CompLocInitial}Datepicker")]    xpath://h1[text()="Datepicker"]
+    Click on the Component    datepicker
+    Validate the Component Page is Visible    xpath:${datePickerPageHeader}
     FOR    ${date}    IN    @{dateList}
         Wait Until Element Is Visible        ${DatePickerLoc}
         Sleep    0.5
@@ -54,14 +50,15 @@ Direct input different formats
     END
     Get back to home page
 
-pick from calender
+Validate Pick from calender
     [Arguments]    ${date}
     @{dateList}=    Split String    ${date}    /
     ${month}=    Get From List    ${dateList}    0
     ${day}=    Get From List    ${dateList}    1
     ${year}=    Get From List    ${dateList}    2
     
-    Click on the Component and Validate the Component Page is Opened    ${CompLocInitial}Datepicker")]    xpath://h1[text()="Datepicker"]
+    Click on the Component    datepicker
+    Validate the Component Page is Visible    xpath:${datePickerPageHeader}
     Sleep    2
     Open DatePicker
     Select Year    ${year}

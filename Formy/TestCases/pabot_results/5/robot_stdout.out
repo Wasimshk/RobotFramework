@@ -1,14 +1,9 @@
 ==============================================================================
-TestCases                                                                     
+CompleteSuite :: Complete Formy Test suite                                    
 ==============================================================================
-TestCases.DatePIcker :: play around with datepicker                           
-==============================================================================
-Validate Date Picker                                                  | PASS |
+Enabled And Disabled Elements Component                               | PASS |
 ------------------------------------------------------------------------------
-TestCases.DatePIcker :: play around with datepicker                   | PASS |
-1 test, 1 passed, 0 failed
-==============================================================================
-TestCases                                                             | PASS |
+CompleteSuite :: Complete Formy Test suite                            | PASS |
 1 test, 1 passed, 0 failed
 ==============================================================================
 Output:  C:\WasimShaikh\Projects\RobotFramework\Formy\TestCases\pabot_results\5\output.xml

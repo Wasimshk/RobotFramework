@@ -1,26 +1,25 @@
 *** Settings ***
-Documentation    play around with buttons Component
-Library    SeleniumLibrary
-Library    Collections
+Documentation    Buttons Page
+Library     SeleniumLibrary
+Resource    ../resources/generic.robot
+Resource    ../resources/home_page.robot
 Library    ../CustomKeywords/Formy.py
-Resource    ../resources/resource.robot
-Test Teardown    Close Browser
-Test Setup    open browser and goto formy website
 
 *** Variables ***
+${buttonsPageLocator}    .form-group.row
 ${buttonsCommonLoc}    //*[contains(@class, "btn btn-lg")]
 @{ButtonsList}    	Primary    Success    Info    Warning    Danger    Link    Left    Middle    Right    1    2    Dropdown
 @{ButtonofChoice}    Primary    Info    Middle
 
-*** Test Cases ***
-Buttons Component Validations
-    Click on the Component and Validate the Component Page is Opened    css:div>li>a[href="/buttons"]    css:.form-group.row
+*** Keywords ***
+Validate Buttons
+    Click on the Component    buttons
+    Validate the Component Page is Visible    css:${buttonsPageLocator}
     validate if all the buttons are clickable and click    ${buttonsCommonLoc}
     check if the correct buttons are present
     Press Buttons Of Choice    ${buttonsCommonLoc}    ${ButtonofChoice}
     open and select from the drop down    link 1
 
-*** Keywords ***
 validate if all the buttons are clickable and click
     [Arguments]    ${locator}
     @{ButtonNamesList}=    Create List

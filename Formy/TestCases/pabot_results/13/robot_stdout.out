@@ -1,14 +1,9 @@
 ==============================================================================
-TestCases                                                                     
+CompleteSuite :: Complete Formy Test suite                                    
 ==============================================================================
-TestCases.SwitchWindow :: play around with all different components           
-==============================================================================
-Validate Switch Window                                                | PASS |
+DropDown Component single option click                                | PASS |
 ------------------------------------------------------------------------------
-TestCases.SwitchWindow :: play around with all different components   | PASS |
-1 test, 1 passed, 0 failed
-==============================================================================
-TestCases                                                             | PASS |
+CompleteSuite :: Complete Formy Test suite                            | PASS |
 1 test, 1 passed, 0 failed
 ==============================================================================
 Output:  C:\WasimShaikh\Projects\RobotFramework\Formy\TestCases\pabot_results\13\output.xml

@@ -1,19 +1,18 @@
 *** Settings ***
 Documentation    play around with all different components
 Library     SeleniumLibrary
-Resource    ../resources/resource.robot
+Resource    ../resources/generic.robot
+Resource    ../resources/home_page.robot
 Library    ../CustomKeywords/Formy.py
-Test Teardown    Close Browser
-Test Setup    open browser and goto formy website
 
-*** Test Cases ***
-Radio Button Validations
-    Validate Radio Button    2
+*** Variables ***
+${radioButtonPageHeader}    //h1[text()="Radio buttons"]
 
 *** Keywords ***
 Validate Radio Button
     [Arguments]    ${RadioButton}
-    Click on the Component and Validate the Component Page is Opened    ${CompLocInitial}Radio Button")]    xpath://h1[contains(text(),"Radio buttons")]
+    Click on the Component    radiobutton
+    Validate the Component Page is Visible    xpath:${radioButtonPageHeader}
     
     Select Radio Button    exampleRadios    option${RadioButton}
     @{radiobuttons}=    Get Webelements    css:[name="exampleRadios"]

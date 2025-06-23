@@ -1,15 +1,9 @@
 ==============================================================================
-TestCases                                                                     
+CompleteSuite :: Complete Formy Test suite                                    
 ==============================================================================
-TestCases.CompleteSuite :: Complete Formy Test suite                          
-==============================================================================
-Formy Project                                                         | FAIL |
-Test cannot be empty.
+Model Component                                                       | PASS |
 ------------------------------------------------------------------------------
-TestCases.CompleteSuite :: Complete Formy Test suite                  | FAIL |
-1 test, 0 passed, 1 failed
-==============================================================================
-TestCases                                                             | FAIL |
-1 test, 0 passed, 1 failed
+CompleteSuite :: Complete Formy Test suite                            | PASS |
+1 test, 1 passed, 0 failed
 ==============================================================================
 Output:  C:\WasimShaikh\Projects\RobotFramework\Formy\TestCases\pabot_results\3\output.xml
