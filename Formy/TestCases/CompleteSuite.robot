@@ -1,17 +1,17 @@
 *** Settings ***
 Documentation    Complete Formy Test suite
-Resource    SwitchWindow.robot
-Resource    RadioButton.robot
-Resource    PageScroll.robot
-Resource    Modal.robot
-Resource    FileUpload.robot
-Resource    EnabledDisabled.robot
-Resource    DropDown.robot
-Resource    DragDrop.robot
-Resource    DatePicker.robot
-Resource    CheckBox.robot
-Resource    Buttons.robot
-Resource    AutoComplete.robot
+Resource    ../resources/SwitchWindow.robot
+Resource    ../resources/RadioButton.robot
+Resource    ../resources/PageScroll.robot
+Resource    ../resources/Modal.robot
+Resource    ../resources/FileUpload.robot
+Resource    ../resources/EnabledDisabled.robot
+Resource    ../resources/DropDown.robot
+Resource    ../resources/DragDrop.robot
+Resource    ../resources/DatePicker.robot
+Resource    ../resources/CheckBox.robot
+Resource    ../resources/Buttons.robot
+Resource    ../resources/AutoComplete.robot
 
 Test Teardown    Close Browser
 Test Setup    open browser and goto formy website
@@ -38,14 +38,17 @@ Checkbox Component Skip CheckBox
 Date Picker Component Valid Format
     Validate Direct input Valid Format    ${myBirthDate}
 Date Picker Component Invalid Format
+    [Tags]    NEGATIVE
     Validate Direct Input Invalid Format    ${incorrectFormat}
 Date Picker Component different formats
     Validate Direct input different formats    ${BirthDateDiffFormat}
 Date Picker Component pick from calender
     Validate Pick from calender    ${Myfuturebirthday}
 DropDown Component single option click
+    [Tags]    SMOKE
     Validate DropDown Single Option    ${DropDownOption}
 DropDown Component all options click
+    [Tags]    REGRESSION
     Validate All DropDown Options    ${DropDownList}
 Buttons Component
     Validate Buttons

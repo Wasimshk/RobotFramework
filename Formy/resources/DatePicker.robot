@@ -3,8 +3,8 @@ Documentation    Date Picker Page
 Library     SeleniumLibrary
 Library    Collections
 Library    String
-Resource    ../resources/generic.robot
-Resource    ../resources/home_page.robot
+Resource    generic.robot
+Resource    home_page.robot
 Library    ../CustomKeywords/Formy.py
 
 *** Variables ***

@@ -2,7 +2,7 @@
 Documentation    this is a resource file
 Library    SeleniumLibrary
 Library    Collections
-Resource    ../resources/generic.robot
+Resource    generic.robot
 
 *** Variables ***
 ${homePageHeader}    //h1[text()="Welcome to Formy"]

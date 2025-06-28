@@ -2,25 +2,26 @@
 Documentation    this is a resource file
 Library    SeleniumLibrary
 Library    Collections
-Resource    ../resources/home_page.robot
+Resource    home_page.robot
 
 *** Variables ***
 ${homePageRedirectLoc}    xpath://*[@class="navbar-brand" and text()="Formy"]
 ${homePageUrl}    https://formy-project.herokuapp.com/
+${browserName}    Chrome
 
 *** Keywords ***
 open browser and goto formy website
-    Create Webdriver    Chrome
+    Create Webdriver    ${browserName}
     Go To    ${homePageUrl}
     Maximize Browser Window
     Validate the home page
 
-open browser and goto url
-    [Arguments]    ${Browser}
-    Create Webdriver    ${Browser}
-    Go To    ${homePageUrl}
-    Maximize Browser Window
-    Validate the home page
+#open browser and goto url
+#    [Arguments]    ${Browser}
+#    Create Webdriver    ${Browser}
+#    Go To    ${homePageUrl}
+#    Maximize Browser Window
+#    Validate the home page
 
 Get back to home page
     Sleep    1

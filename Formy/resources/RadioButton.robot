@@ -1,8 +1,8 @@
 *** Settings ***
 Documentation    play around with all different components
 Library     SeleniumLibrary
-Resource    ../resources/generic.robot
-Resource    ../resources/home_page.robot
+Resource    generic.robot
+Resource    home_page.robot
 Library    ../CustomKeywords/Formy.py
 
 *** Variables ***
