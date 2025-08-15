@@ -1,6 +1,7 @@
 *** Settings ***
 Library       Collections
 Library       RequestsLibrary
+
 *** Variables ***
 ${base_url}    http://216.10.245.166
 ${base_url2}    https://jsonplaceholder.typicode.com

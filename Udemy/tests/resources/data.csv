@@ -1,5 +1,0 @@
-*** Test Cases ***	,${username},${password}
-Invalid Username,wwasims,learning
-Invalid Password,srahulshetty,2312312
-Spacial Characters,@$#!,learning
-,user,pass1
